@@ -3,20 +3,20 @@ name: Deploy Streamlit app
 on:
   push:
     branches:
-      - main  # Replace with the branch you want to trigger the deployment
+      - main  # Change this to the branch you want to deploy from, e.g., 'master'
 
 jobs:
   build:
-    runs-on: windows-2022  # Change to a Windows runner (Windows Server 2022)
+    runs-on: windows-2022  # Use Windows Server 2022 runner
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python 3.7.11
+    - name: Set up Python 3.7.9
       uses: actions/setup-python@v4
       with:
-        python-version: 3.7.11  # Ensure you're using Python 3.7.11
+        python-version: 3.7.9  # Use 3.7.9 or another version of Python 3.7
 
     - name: Install dependencies
       run: |
@@ -25,4 +25,4 @@ jobs:
 
     - name: Deploy Streamlit app
       run: |
-        streamlit run your_app.py  # Replace `your_app.py` with your actual app script
+        streamlit run your_app.py  # Replace with your app's entry script
