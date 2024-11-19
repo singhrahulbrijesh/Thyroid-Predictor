@@ -27,7 +27,7 @@ mdurl
 mkl-fft
 mkl-random
 mkl-service
-numpy==1.21.2
+numpy>=1.21.6,<=1.24.0
 packaging
 pandas
 Pillow
@@ -63,3 +63,4 @@ Werkzeug
 wincertstore
 xgboost
 zipp
+
