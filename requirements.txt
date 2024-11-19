@@ -27,7 +27,7 @@ mdurl
 mkl-fft
 mkl-random
 mkl-service
-numpy==1.17
+numpy==1.18.2
 packaging
 pandas
 Pillow
