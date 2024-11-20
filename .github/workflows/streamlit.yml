@@ -13,7 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python 3.7.11
+    - name: Install Chocolatey
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force;
+        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+        iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+    - name: Install Python 3.7.11 via Chocolatey
+      run: |
+        choco install python --version=3.7.11 -y
+
+    - name: Set up Python environment
       uses: actions/setup-python@v4
       with:
         python-version: 3.7.11  # Ensure you're using Python 3.7.11
@@ -23,9 +33,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Install dependencies from requirements.txt
 
-    - name: Run Streamlit app
+    - name: Deploy Streamlit app
       run: |
-        streamlit run your_app.py  # Replace with your app's entry script
+        streamlit run app  # Replace with your app's entry script
       env:
         STREAMLIT_SERVER_HEADLESS: "true"  # Set headless mode to avoid the interactive email prompt
         STREAMLIT_SERVER_ENABLECORS: "false"  # Optional: Disable CORS if needed
