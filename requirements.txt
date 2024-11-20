@@ -1,3 +1,4 @@
+altair
 attrs
 backports.zoneinfo
 blinker
@@ -7,6 +8,7 @@ charset-normalizer
 click
 colorama
 decorator
+distutils
 Flask
 Flask-Cors
 gitdb
