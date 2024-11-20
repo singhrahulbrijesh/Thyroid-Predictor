@@ -13,16 +13,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python 3.7.9
+    - name: Set up Python 3.7.11
       uses: actions/setup-python@v4
       with:
-        python-version: 3.7.9  # Use 3.7.9 or another version of Python 3.7
+        python-version: 3.7.11  # Ensure you're using Python 3.7.11
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Install dependencies from requirements.txt
 
-    - name: Deploy Streamlit app
+    - name: Run Streamlit app
       run: |
-        streamlit run app.py  # Replace with your app's entry script
+        streamlit run your_app.py  # Replace with your app's entry script
+      env:
+        STREAMLIT_SERVER_HEADLESS: "true"  # Set headless mode to avoid the interactive email prompt
+        STREAMLIT_SERVER_ENABLECORS: "false"  # Optional: Disable CORS if needed
+
