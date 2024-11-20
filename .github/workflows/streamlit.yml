@@ -29,4 +29,3 @@ jobs:
       env:
         STREAMLIT_SERVER_HEADLESS: "true"  # Set headless mode to avoid the interactive email prompt
         STREAMLIT_SERVER_ENABLECORS: "false"  # Optional: Disable CORS if needed
-
