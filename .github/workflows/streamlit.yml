@@ -25,4 +25,4 @@ jobs:
 
     - name: Deploy Streamlit app
       run: |
-        streamlit run your_app.py  # Replace with your app's entry script
+        streamlit run app.py  # Replace with your app's entry script
