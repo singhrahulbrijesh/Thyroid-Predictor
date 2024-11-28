@@ -3,23 +3,8 @@
 __pycache__/
 *.pyo
 
-# Ignore virtual environments
-venv/
-env/
-
-# Ignore IDE config files
-.idea/
-.vscode/
-
-# Ignore log files
-*.log
 
 # Ignore system-specific files
 .DS_Store
 Thumbs.db
 
-Procfile
-
-dist/
-build/
-*.egg-info/
