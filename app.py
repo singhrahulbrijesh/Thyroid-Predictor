@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
-from predictFromModel import prediction  # Ensure this module is in the same directory
+from predictFromModel import Prediction  # Ensure this module is in the same directory
 
 # Configure Streamlit app
 st.set_page_config(page_title="🌟 Thyroid Detection System", layout="wide")
@@ -26,6 +26,7 @@ INPUT_FILE_DIR = "Prediction_InputFileFromUser/"
 os.makedirs(CSV_FILE_DIR, exist_ok=True)
 os.makedirs(SAMPLE_FILE_DIR, exist_ok=True)
 os.makedirs(INPUT_FILE_DIR, exist_ok=True)
+
 
 # Utility function to get the first file from a directory
 def get_first_file(directory):
@@ -87,7 +88,7 @@ if uploaded_file:
 
         # Run prediction
         with st.spinner("🔄 Running prediction... This might take a few seconds ⏳"):
-            pred = prediction()  # Initialize prediction class
+            pred = Prediction()  # Initialize prediction class
             pred.predictionFromModel()
 
         # Provide download button for results

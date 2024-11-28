@@ -184,7 +184,7 @@ class Preprocessor:
 
 
         rdsmple = RandomOverSampler()
-        x_sampled, y_sampled = rdsmple.fit_sample(X, Y)
+        x_sampled, y_sampled = rdsmple.fit_resample(X, Y)
 
         return x_sampled,y_sampled
     def impute_missing_values(self, data):

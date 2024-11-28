@@ -12,6 +12,7 @@ from data_preprocessing import clustering
 from best_model_finder import tuner
 from file_operations import file_methods
 from application_logging import logger
+from imblearn.over_sampling import RandomOverSampler
 
 #Creating the common Logging object
 
@@ -103,3 +104,14 @@ class trainModel:
             self.log_writer.log(self.file_object, 'Unsuccessful End of Training')
             self.file_object.close()
             raise Exception
+
+if __name__ == '__main__':
+    try:
+        # Create model object
+        model_trainer = trainModel()
+        # Train the model
+        model_trainer.trainingModel()
+        
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        raise
