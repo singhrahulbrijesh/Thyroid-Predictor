@@ -22,7 +22,7 @@ Streamlit:- https://thyroid-predictor.streamlit.app/
 ![Thyroid prediction image ](https://github.com/user-attachments/assets/3928cb1d-f5aa-4001-933f-94372330a27c)
 [Watch the video] - 
 
-https://github.com/user-attachments/assets/a1774601-42e2-483e-bd4d-d66053772a70
+https://github.com/user-attachments/assets/b33a832d-1d48-46f5-97b5-fc07ce6754f5
 
 
 ## Architecture
