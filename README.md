@@ -60,12 +60,12 @@ In this step, we perform different sets of validation on the given set of traini
    c) Encode the categorical values
    d) Check for null values in the columns. If present, impute the null values using the KNN imputer.
    e)  After imputing, handle the imbalanced dataset by using RandomOverSampler.
-3) Clustering - KMeans algorithm is used to create clusters in the preprocessed data. The optimum number of clusters is selected by plotting the elbow plot, and for the dynamic selection of the number of clusters, we are using "KneeLocator" function. The idea behind clustering is to implement different algorithms
-   To train data in different clusters. The Kmeans model is trained over preprocessed data and the model is saved for further use in prediction.
-4) Model Selection - After clusters are created, we find the best model for each cluster. We are using two algorithms, "Random Forest" and "KNN". For each cluster, both the algorithms are passed with the best parameters derived from GridSearch. We calculate the AUC scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction. 
+3) Clustering - The KMeans algorithm creates clusters in the preprocessed data. The optimum number of clusters is selected by plotting the elbow plot, and for the dynamic selection of the number of clusters, we are using the "KneeLocator" function. The idea behind clustering is to implement different algorithms
+   To train data in different clusters, the K-means model is trained over preprocessed data and saved for further use in prediction.
+4) Model Selection—After clusters are created, we find the best model for each cluster. We use two algorithms, "Random Forest" and "KNN." For each cluster, both algorithms are passed with the best parameters derived from GridSearch. We calculate the AUC scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction. 
 
 ## Prediction Data Description
-Client will send the data in multiple set of files in batches at a given location. Apart from prediction files, we also require a "schema" file from client which contains all the relevant information about the training files such as:Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns and their datatype.
+The client will send the data in multiple sets of files in batches at a given location. Apart from prediction files, we also require a "schema" file from the client which contains all the relevant information about the training files such as the name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns and their datatype.
 
 ## Data Validation - For Prediction Data
 In this step, we perform different sets of validation on the given set of training files.  
