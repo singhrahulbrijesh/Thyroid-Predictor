@@ -64,7 +64,7 @@ In this step, we perform different sets of validation on the given set of traini
    To train data in different clusters, the K-means model is trained over preprocessed data and saved for further use in prediction.
 4) Model Selection—After clusters are created, we find the best model for each cluster. We use two algorithms, "Random Forest" and "KNN." For each cluster, both algorithms are passed with the best parameters derived from GridSearch. We calculate the AUC scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction. 
 
-## Prediction Data Description
+## Prediction Data Description 
 The client will send the data in multiple sets of files in batches at a given location. Apart from prediction files, we also require a "schema" file from the client which contains all the relevant information about the training files such as the name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns and their datatype.
 
 ## Data Validation - For Prediction Data
